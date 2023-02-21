@@ -1,17 +1,16 @@
 #include "main.h"
 /**
- * print_alphabet- This is where the execution starts
- * Function prints the alphabet in lower case
- * followed by a new line
- * Return: Always 0 (Success)
+ * print_alphabet - print lowercase alphabet
+ * Return:0  Always (SUCCESS)
+ * betty style doc for function main goes there
  */
 void print_alphabet(void)
 {
-	char (letter = 'a');
-while (letter <= 'z')
-	{
-_putchar(letter);
-letter++;
+int i;
+for (i = 97; i <= 122; i++)
+{
+_putchar(i);
 }
+/* using ASCII valuse in the code above */
 _putchar('\n');
 }
