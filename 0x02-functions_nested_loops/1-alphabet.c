@@ -1,11 +1,10 @@
 #include "main.h"
 /**
- * print alphabet - This is where the execution starts
  * Function prints the alphabet in lowercase
  * followed by a new line
  * Return:0 (Success)
  */
-void print alphabet(void)
+void print_alphabet(void)
 {
 char letter = 'a';
 while (letter <= 'z')
