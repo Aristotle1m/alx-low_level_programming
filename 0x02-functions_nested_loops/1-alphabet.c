@@ -1,16 +1,13 @@
 #include "main.h"
-/**
- * print_alphabet - Entry point
- * Return: Always 0 (Success)
+
+/* The function print_alphabet prints
+ * the values from a to z.
+ * It takes no argument (void) and
+ * returns nothing (void)
  */
 void print_alphabet(void)
 {
-	int alpha;
-	alpha = 'a';
-	while (alpha <= 'z')
-	{
-		_putchar(alpha);
-		alpha++;
-	}
-	_putchar('\n');
+  char c;
+  for(c='a';c<='z';++c)
+    print_char(c);  
 }
