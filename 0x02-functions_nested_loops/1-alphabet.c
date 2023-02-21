@@ -1,12 +1,18 @@
 #include "main.h"
-
-/* The function print_alphabet prints
- * the values from a to z.
- * It takes no argument (void) and
- * returns nothing (void)
+/**
+ * print_alphabet- This is where the execution starts
+ * Function prints the alphabet in lower case
+ * followed by a new line
+ * Return: Always 0 (Success)
  */
+void print_alphabet(void)
 {
-  char c;
-  for(c='a';c<='z';++c)
-    print_char(c);  
+	char letter = 'a';
+
+	while (letter <= 'z')
+	{
+		_putchar(letter);
+		letter++;
+	}
+	_putchar('\n');
 }
