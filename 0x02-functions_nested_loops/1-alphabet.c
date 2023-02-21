@@ -5,7 +5,6 @@
  * It takes no argument (void) and
  * returns nothing (void)
  */
-void print_alphabet(void)
 {
   char c;
   for(c='a';c<='z';++c)
