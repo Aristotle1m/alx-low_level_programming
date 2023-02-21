@@ -2,7 +2,7 @@
 #include "main.h"
 /**
  * main - print _putchar thrn a new line
- * Return:0 Always (SUCCESS)
+ * Return:0  Always (SUCCESS)
  * betty style doc for function main goes there
  */
 int main(void)
