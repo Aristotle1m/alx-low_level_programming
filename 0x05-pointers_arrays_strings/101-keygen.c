@@ -2,23 +2,23 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main - generates keygen.
+ * main - keygen.
  * Return: 0 Always.
+ * betty style doc for function main goes there
  */
 int main(void)
 {
-	int r = 0, c = 0;
-	time_t t;
-
-	srand((unsigned int) time(&t));
-	while (c < 2772)
-	{
-		r = rand() % 128;
-		if ((c + r) > 2772)
-			break;
-		c = c + r;
-		printf("%c", r);
-	}
-	printf("%c\n", (2772 - c));
-	return (0);
+int key = 0, gen = 0;
+time_t t;
+srand((unsigned int) time(&t));
+while (gen < 2772)
+{
+key = rand() % 128;
+if ((gen + key) > 2772)
+break;
+gen = gen + key;
+printf("%c", key);
+}
+printf("%c\n", (2772 - gen));
+return (0);
 }
