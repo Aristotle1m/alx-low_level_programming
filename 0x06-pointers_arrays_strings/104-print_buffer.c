@@ -1,12 +1,13 @@
-nclude "main.h"
+#include "main.h"
 #include <stdio.h>
 
 /**
  * print_buffer - prints a buffer
- * @b: buffer.
- * @size: size of buffer.
- * Return: no return.
+ * @b: buffer
+ * @size: size of the buffer
+ * Return: Null void
  */
+
 void print_buffer(char *b, int size)
 {
 	int j, k, l;
