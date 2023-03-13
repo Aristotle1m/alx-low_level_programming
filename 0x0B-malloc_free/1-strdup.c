@@ -2,8 +2,8 @@
 #include <stdlib.h>
 /**
  * _strdup - returns pointer to a new space allocated in the memory.
- * @str: strings
- * Return: pointer of an array of chars
+ * @str: strings.
+ * Return: pointer of an array of characters
  * betty style doc for function main goes there
  */
 
