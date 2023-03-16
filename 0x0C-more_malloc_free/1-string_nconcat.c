@@ -1,51 +1,44 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * string_nconcat - concatenates two strings
- * @s1: string one
- * @s2: string two
- * @n: number of bytes to be included in @s2
- * Return: newly allocated space in memory, NUll if function fails
-*/
+ * string_nconcat -function that concatenate 2 strings
+ * @s1: first string
+ * @s2: second string
+ * @n: number of s2 to add to s1
+ * Return: pointer to space allocated
+ */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *str;
-	char *ar = s1;
-	unsigned int x, y;
-	unsigned int l1, l2 = 0;
+	unsigned int i = 0, j = 0, k;
+	char *space;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	x = 0;
-	while (*s1++)
-		x++;
-	l1 = 1;
-	s1 = ar;
+	while (s1[i] != '\0')
+		i++;
+	while (s2[j] != '\0')
+		j++;
 
-	l2 = n;
+	if (n > j)
+	n = j;
 
-	str = malloc((l1 + l2) * sizeof(char) + 1);
-	if (str == Null)
-		return (NULL);
+	space = malloc((i + n + 1) * sizeof(char));
 
-	y = 0;
-	while (y < l1)
-	{
-		str[y] = s1[y];
-		y++;
-	}
-	while (y < l1 + l2)
-	{
-		str[y] = s2[y - l1];
-		y++;
-	}
+	if (space == NULL)
+		return (0);
 
-	str[y] = '\0';
-	return (str);
+	for (k = 0; k < i; k++)
+		space[k] = s1[k];
+
+	for (; k < (i + n); k++)
+		space[k] = s2[k - i];
+
+	space[k] = '\0';
+
+	return (space);
 }
