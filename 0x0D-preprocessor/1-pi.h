@@ -1,7 +1,7 @@
-#ifndef MATH_H
-#define MATH_H
+#ifndef PI
+#define PI
 
 #define PI 3.14159265359
 
-#endif /* MATH_H */
+#endif /* PI */
 
