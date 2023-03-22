@@ -1,71 +1,46 @@
-#include "3-calc.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * op_add - adds two numbers.
- * @a: first number.
- * @b: second number.
+ * main - Prints the opcodes of itself.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
  *
- * Return: add.
+ * Return: Always 0.
  */
-int op_add(int a, int b)
+int main(int argc, char *argv[])
 {
-	return (a + b);
-}
+	int bytes, index;
+	int (*address)(int, char **) = main;
+	unsigned char opcode;
 
-/**
- * op_sub - subctracts two numbers.
- * @a: first number.
- * @b: second number.
- *
- * Return: difference.
- */
-int op_sub(int a, int b)
-{
-	return (a - b);
-}
-
-/**
- * op_mul - multiplies two numbers.
- * @a: first number.
- * @b: second number.
- *
- * Return: multiplication.
- */
-int op_mul(int a, int b)
-{
-	return (a * b);
-}
-
-/**
- * op_div - divides two numbers.
- * @a: first number.
- * @b: second number.
- *
- * Return: division.
- */
-int op_div(int a, int b)
-{
-	if (b == 0)
+	if (argc != 2)
 	{
 		printf("Error\n");
-		exit(100);
+		exit(1);
 	}
-	return (a / b);
-}
 
-/**
- * op_mod - calculates the module of two numbers.
- * @a: first number.
- * @b: second number.
- *
- * Return: remainder of the division.
- */
-int op_mod(int a, int b)
-{
-	if (b == 0)
+	bytes = atoi(argv[1]);
+
+	if (bytes < 0)
 	{
 		printf("Error\n");
-		exit(100);
+		exit(2);
 	}
-	return (a % b);
+
+	for (index = 0; index < bytes; index++)
+	{
+		opcode = *(unsigned char *)address;
+		printf("%.2x", opcode);
+
+		if (index == bytes - 1)
+			continue;
+		printf(" ");
+
+		address++;
+	}
+
+	printf("\n");
+
+	return (0);
 }
