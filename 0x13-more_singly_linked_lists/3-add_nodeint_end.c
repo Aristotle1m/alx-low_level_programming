@@ -3,36 +3,38 @@
 
 /**
  * add_nodeint_end - add node to the end
- * @x: pointer to the start of the linked list
+ * @head: pointer to the start of the linked list
  * @n: value to add to node
+ * @x: new
+ * @y: last
  * Return: the address of the new element
  */
 
 
-listint_t *add_nodeint_end(listint_t **x, const int n)
+listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *new;
-	listint_t *last;
+	listint_t *x;
+	listint_t *y;
 
+	if (!head)
+		return (NULL);
+
+	x = malloc(sizeof(listint_t));
 	if (!x)
 		return (NULL);
+	(*x).n = n;
+	(*x).next = NULL;
 
-	new = malloc(sizeof(listint_t));
-	if (!new)
-		return (NULL);
-	(*new).n = n;
-	(*new).next = NULL;
-
-	if (x && !*x)
+	if (head && !*head)
 	{
-		*x = new;
-		return (new);
+		*head = x;
+		return (x);
 	}
 
-	for (last = *head; (*last).next; last = (*last).next)
+	for (y = *head; (*y).next; y = (*y).next)
 		;
 
-	(*last).next = new;
+	(*y).next = x;
 
-	return (new);
+	return (x);
 }
