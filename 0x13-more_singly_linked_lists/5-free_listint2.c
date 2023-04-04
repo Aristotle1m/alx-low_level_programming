@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * free_listint2 - function that frees listint_t list
+ * free_listint2 - function that frees the listint_t list
  * @head: double pointer to the beginning of the linked list
  */
 
