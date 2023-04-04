@@ -2,30 +2,32 @@
 
 /**
  * find_listint_loop - finds the beggining of a loop in a linked list
+ * Returns: The address of the node where the loop starts
+ * or NULL if there is no loop
  * @head: beggining of linked list
  * Return: beggining of loop
  */
 
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *slow, *fast;
+	listint_t *x, *xx;
 
 	while (head && (*head).next)
 	{
-		slow = head;
-		fast = (*head).next;
-		while (slow != fast)
+		x = head;
+		xx = (*head).next;
+		while (x != xx)
 		{
-			if (slow)
-				slow = (*slow).next;
-			if (fast == head)
+			if (x)
+				x = (*x).next;
+			if (xx == head)
 				return (head);
-			if (fast)
-				fast = (*fast).next;
-			if (fast == head)
+			if (xx)
+				xx = (*xx).next;
+			if (xx == head)
 				return (head);
-			if (fast)
-				fast = (*fast).next;
+			if (xx)
+				xx = (*xx).next;
 			if (fast == head)
 				return (head);
 		}
