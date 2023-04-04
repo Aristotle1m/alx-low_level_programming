@@ -26,8 +26,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	{
 		delete = (*hold).next;
 		(*hold).next = (*delete).next;
-		free(delete);
-		return (1);
+		free(delete);	return (1);
 	}
 	else if (!index && (**head).next)
 	{
