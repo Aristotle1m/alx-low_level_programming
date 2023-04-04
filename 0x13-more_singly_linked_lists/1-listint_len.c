@@ -2,15 +2,15 @@
 
 /**
  * listint_len - return # of elements
- * @h: pointer to the first element
+ * @p: pointer to the first element
  * Return: number of elements
  */
 
-size_t listint_len(const listint_t *h)
+size_t listint_len(const listint_t *p)
 {
 	int i;
 
-	for (i = 0; h; h = (*h).next, i++)
+	for (i = 0; h; p = (*p).next, i++)
 		;
 
 	return (i);
