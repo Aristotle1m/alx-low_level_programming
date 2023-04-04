@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 /**
- * pop_listint - deleted the head node of a linked list 
+ * pop_listint - deleted the head node of a linked list
+ * returns the head node’s data (n).
  * @head: double pointer to the linked list start
  * Return: deleted value - n
  */
