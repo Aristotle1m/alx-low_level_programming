@@ -28,7 +28,7 @@ listint_t *find_listint_loop(listint_t *head)
 				return (head);
 			if (xx)
 				xx = (*xx).next;
-			if (fast == head)
+			if (xx == head)
 				return (head);
 		}
 		head = (*head).next;
