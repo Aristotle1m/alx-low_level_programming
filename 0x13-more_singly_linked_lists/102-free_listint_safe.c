@@ -1,49 +1,72 @@
 #include "lists.h"
-#include <stdlib.h>
 
 /**
- * free_listint_safe - function that free a listint_t linked list
- * @h: pointer to the beginning of linked list
- * Return: the number of nodes in the list
+ * free_listp2 - frees a linked list
+ * @head: head of a list.
+ *
+ * Return: no return.
  */
+void free_listp2(listp_t **head)
+{
+	listp_t *temp;
+	listp_t *curr;
 
+	if (head != NULL)
+	{
+		curr = *head;
+		while ((temp = curr) != NULL)
+		{
+			curr = curr->next;
+			free(temp);
+		}
+		*head = NULL;
+	}
+}
+
+/**
+ * free_listint_safe - frees a linked list.
+ * @h: head of a list.
+ *
+ * Return: size of the list that was freed.
+ */
 size_t free_listint_safe(listint_t **h)
 {
-	int i, flag = 0;
-	listint_t *slow, *fast, *delete;
+	size_t nnodes = 0;
+	listp_t *hptr, *new, *add;
+	listint_t *curr;
 
-	if (!h)
-		return (0);
-
-	for (i = 0; *h && !flag; i++)
+	hptr = NULL;
+	while (*h != NULL)
 	{
-		slow = *h;
-		fast = (**h).next;
-		while (slow != fast)
+		new = malloc(sizeof(listp_t));
+
+		if (new == NULL)
+			exit(98);
+
+		new->p = (void *)*h;
+		new->next = hptr;
+		hptr = new;
+
+		add = hptr;
+
+		while (add->next != NULL)
 		{
-			if (slow)
-				slow = (*slow).next;
-			if (fast)
-				fast = (*fast).next;
-			if (fast == *h)
-				flag = 1;
-			if (fast)
-				fast = (*fast).next;
-			if (fast == *h)
-				flag = 1;
+			add = add->next;
+			if (*h == add->p)
+			{
+				*h = NULL;
+				free_listp2(&hptr);
+				return (nnodes);
+			}
 		}
-		delete = *h;
-		*h = (**h).next;
-		free(delete);
+
+		curr = *h;
+		*h = (*h)->next;
+		free(curr);
+		nnodes++;
 	}
 
-	while (flag && *h != fast)
-	{
-		delete = *h;
-		i++;
-		*h = (**h).next;
-		free(delete);
-	}
 	*h = NULL;
-	return (i);
+	free_listp2(&hptr);
+	return (nnodes);
 }
