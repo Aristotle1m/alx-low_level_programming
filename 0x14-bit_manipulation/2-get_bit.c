@@ -3,19 +3,19 @@
 /**
  * get_bit - function that returns the value of a bit at a given index
  * @n: unsigned long int input.
- * @x: index of the bit.
+ * @ndex: index of the bit.
  * Return:always (0) value of the bit.
  */
-int get_bit(unsigned long int n, unsigned int x)
+int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int index;
+	unsigned int i;
 
-	if (n == 0 && x < 64)
+	if (n == 0 && index < 64)
 		return (0);
 
-	for (index = 0; index <= 63; n >>= 1, index++)
+	for (i = 0; i <= 63; n >>= 1, i++)
 	{
-		if (x == indx)
+		if (index == i)
 		{
 			return (n & 1);
 		}
