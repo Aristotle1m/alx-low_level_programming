@@ -6,7 +6,8 @@
 #include <unistd.h>
 #include <elf.h>
 /**
- * print_addr - program that displays the information contained in the ELF header
+ * print_addr - program that displays the information
+ *contained in the ELF header
  * at the start of an ELF file.
  * @ptr: magic.
  * Return: no return.
