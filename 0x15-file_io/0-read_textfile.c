@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * read_textfile - function that reads a text file and prints it.... 
+ * read_textfile - function that reads a text file and prints it....
  * to the POSIX standard output
  * @letters: number of letters that needs to read and print
  * @filename: filename to be executed.
  * definitio: if filename is NULL || if write fails or does not
  * if the file can not be opened or read, return 0
- * if filename is NULL return 0
+ * Return: if filename is NULL return 0
  * if write fails or does not write the expected amount of bytes, return 0
  */
 
