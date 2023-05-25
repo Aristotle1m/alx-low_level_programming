@@ -1,3 +1,3 @@
 #!/bin/bash
-wget -O /tmp/maskman.so https://raw.github.com/nadduli/alx-low_level_programming/master/0x18-dynamic_libraries/maskman.so
-export LD_PRELOAD=/tmp/maskman.so"
+wget -P .. https://raw.githubusercontent.com/VicvekSr9485/alx-low_level_programming/main/0x18-dynamic_libraries/randnum.so
+export LD_PRELOAD="$PWD/../randnum.so"
